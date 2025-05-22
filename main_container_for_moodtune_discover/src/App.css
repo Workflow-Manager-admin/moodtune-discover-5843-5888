@@ -223,6 +223,15 @@ input:checked + .toggle-slider:before {
   color: var(--kavia-orange);
   text-decoration: none;
   font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.see-all:hover {
+  text-decoration: underline;
 }
 
 .music-cards {
