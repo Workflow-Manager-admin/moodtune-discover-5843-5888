@@ -87,3 +87,4 @@ src/components/SearchBar.js
   Line 38:6:  React Hook useEffect has a missing dependency: 'mockMusicData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
 
 webpack compiled with 1 warning
+Compiling...

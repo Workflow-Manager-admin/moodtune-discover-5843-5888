@@ -39,7 +39,7 @@ function App() {
     } else {
       setSearchResults([]);
     }
-  }, [searchQuery]);
+  }, [searchQuery, mockSearchData]);
   
   // Handle search submission
   const handleSearch = (query) => {
