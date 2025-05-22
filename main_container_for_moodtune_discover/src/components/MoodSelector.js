@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
  * MoodSelector component for selecting music based on mood
  * @param {Object} props - Component props
  * @param {Function} props.onMoodSelect - Function called when a mood is selected
+ * @param {string} props.selectedMoodId - Currently selected mood ID 
  * @returns {JSX.Element} Mood selection UI
  */
-const MoodSelector = ({ onMoodSelect }) => {
+const MoodSelector = ({ onMoodSelect, selectedMoodId }) => {
+  const [activeMood, setActiveMood] = useState(selectedMoodId || null);
+  
+  // Update active mood when selectedMoodId prop changes
+  useEffect(() => {
+    if (selectedMoodId) {
+      setActiveMood(selectedMoodId);
+    }
+  }, [selectedMoodId]);
+  
   // Placeholder moods
   const moods = [
     { id: 'happy', label: 'Happy', icon: '😊' },
@@ -19,10 +29,12 @@ const MoodSelector = ({ onMoodSelect }) => {
 
   // Handle mood selection
   const handleMoodClick = (mood) => {
+    setActiveMood(mood.id);
+    
     if (onMoodSelect) {
       onMoodSelect(mood);
     }
-    // This is a placeholder. In a real app, this would trigger an API call
+    
     console.log(`Mood selected: ${mood.label}`);
   };
 
@@ -35,8 +47,12 @@ const MoodSelector = ({ onMoodSelect }) => {
         {moods.map((mood) => (
           <div 
             key={mood.id} 
-            className="mood-tile" 
+            className={`mood-tile ${activeMood === mood.id ? 'active' : ''}`}
             onClick={() => handleMoodClick(mood)}
+            style={{
+              borderColor: activeMood === mood.id ? 'var(--kavia-orange)' : 'transparent',
+              backgroundColor: activeMood === mood.id ? 'rgba(232, 122, 65, 0.1)' : ''
+            }}
           >
             <div className="mood-icon">{mood.icon}</div>
             <div className="mood-label">{mood.label}</div>
