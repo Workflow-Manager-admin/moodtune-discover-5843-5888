@@ -22,7 +22,9 @@ const RecommendationSection = ({ title, items = [] }) => {
     <section className="recommendations-section">
       <div className="section-header">
         <h2 className="section-title">{title}</h2>
-        <a href="#" className="see-all">See All</a>
+        <button className="see-all" onClick={() => console.log(`View all ${title}`)}>
+          See All
+        </button>
       </div>
       <div className="music-cards">
         {placeholderItems.map(item => (
