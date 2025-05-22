@@ -7,6 +7,11 @@ import { ThemeContext } from '../contexts/ThemeContext';
  */
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  
+  const handleToggleChange = () => {
+    toggleTheme();
+    console.log(`Theme switched to: ${theme === 'dark' ? 'light' : 'dark'}`);
+  };
 
   return (
     <div className="theme-toggle">
@@ -15,7 +20,7 @@ const ThemeToggle = () => {
           type="checkbox"
           id="theme-switch"
           checked={theme === 'light'}
-          onChange={toggleTheme}
+          onChange={handleToggleChange}
           aria-label="Toggle theme"
         />
         <span className="toggle-slider">
