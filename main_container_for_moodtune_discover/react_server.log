@@ -88,3 +88,38 @@ src/components/SearchBar.js
 
 webpack compiled with 1 warning
 Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 22:9:  The 'mockSearchData' array makes the dependencies of useEffect Hook (at line 42) change on every render. Move it inside the useEffect callback. Alternatively, wrap the initialization of 'mockSearchData' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+src/components/SearchBar.js
+  Line 38:6:  React Hook useEffect has a missing dependency: 'mockMusicData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 22:9:  The 'mockSearchData' array makes the dependencies of useEffect Hook (at line 42) change on every render. Move it inside the useEffect callback. Alternatively, wrap the initialization of 'mockSearchData' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+src/components/SearchBar.js
+  Line 38:6:  React Hook useEffect has a missing dependency: 'mockMusicData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/SearchBar.js
+  Line 38:6:  React Hook useEffect has a missing dependency: 'mockMusicData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/SearchBar.js
+  Line 38:6:  React Hook useEffect has a missing dependency: 'mockMusicData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning

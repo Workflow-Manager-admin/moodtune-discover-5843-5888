@@ -18,17 +18,17 @@ function App() {
   // State for search results
   const [searchResults, setSearchResults] = useState([]);
   
-  // Mock data for search results
-  const mockSearchData = [
-    { id: 101, title: 'Midnight Serenade', artist: 'Luna Echo', cover: '', moods: ['chill', 'melancholy'] },
-    { id: 102, title: 'Electric Dreams', artist: 'Neon Wave', cover: '', moods: ['energetic', 'happy'] },
-    { id: 103, title: 'Mountain Echo', artist: 'The Explorers', cover: '', moods: ['focus', 'chill'] },
-    { id: 104, title: 'Cityscape', artist: 'City Sound', cover: '', moods: ['focus', 'energetic'] },
-    { id: 105, title: 'Oceanic Feelings', artist: 'Coastal Tides', cover: '', moods: ['chill', 'romantic'] },
-  ];
-
   // Generate search results when search query changes
   useEffect(() => {
+    // Mock data for search results - moved inside useEffect to avoid recreation on each render
+    const mockSearchData = [
+      { id: 101, title: 'Midnight Serenade', artist: 'Luna Echo', cover: '', moods: ['chill', 'melancholy'] },
+      { id: 102, title: 'Electric Dreams', artist: 'Neon Wave', cover: '', moods: ['energetic', 'happy'] },
+      { id: 103, title: 'Mountain Echo', artist: 'The Explorers', cover: '', moods: ['focus', 'chill'] },
+      { id: 104, title: 'Cityscape', artist: 'City Sound', cover: '', moods: ['focus', 'energetic'] },
+      { id: 105, title: 'Oceanic Feelings', artist: 'Coastal Tides', cover: '', moods: ['chill', 'romantic'] },
+    ];
+    
     if (searchQuery) {
       // In a real app, this would be an API call
       const results = mockSearchData.filter(item => 
@@ -39,7 +39,7 @@ function App() {
     } else {
       setSearchResults([]);
     }
-  }, [searchQuery, mockSearchData]);
+  }, [searchQuery]);
   
   // Handle search submission
   const handleSearch = (query) => {
